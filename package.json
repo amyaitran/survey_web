@@ -2,37 +2,52 @@
   "name": "survey_web",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
   "scripts": {
-    "build": "webpack",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "npm run css",
+    "css-compile": "node-sass --include-path node_modules --output-style compressed --source-map true --source-map-contents true --precision 6 scss -o assets/css/",
+    "css-lint": "stylelint scss/",
+    "css-prefix": "postcss --replace assets/css/starter.css --use autoprefixer --map",
+    "css-purge": "purgecss --keyframes --css assets/css/starter.css --content index.html \"node_modules/bootstrap/js/dist/{util,modal}.js\" --output assets/css/",
+    "css": "npm-run-all css-compile css-prefix",
+    "server": "sirv --port 3000",
+    "start": "npm-run-all --parallel watch server",
+    "watch": "nodemon -e html,scss -x \"npm run css\"",
+    "test": "npm run css-lint && npm run css"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/amyaitran/survey_web.git"
   },
-  "keywords": [],
+  "keywords": [
+    "bootstrap",
+    "sass",
+    "css",
+    "javascript",
+    "starter",
+    "template"
+  ],
   "author": "",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/amyaitran/survey_web/issues"
   },
   "homepage": "https://github.com/amyaitran/survey_web#readme",
-  "devDependencies": {
-    "autoprefixer": "^10.2.5",
-    "css-loader": "^5.1.3",
-    "exports-loader": "^2.0.0",
-    "html-webpack-plugin": "^5.3.1",
-    "node-sass": "^5.0.0",
-    "postcss-loader": "^5.2.0",
-    "sass-loader": "^11.0.1",
-    "style-loader": "^2.0.0",
-    "webpack": "^5.27.1",
-    "webpack-cli": "^4.5.0"
-  },
   "dependencies": {
     "bootstrap": "^4.6.0",
+    "bootstrap-icons": "^1.4.0",
     "jquery": "^3.6.0",
     "popper.js": "^1.16.1"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.2.5",
+    "node-sass": "^5.0.0",
+    "nodemon": "^2.0.7",
+    "npm-run-all": "^4.1.5",
+    "postcss": "^8.2.8",
+    "postcss-cli": "^8.3.1",
+    "purgecss": "^4.0.2",
+    "sirv-cli": "^1.0.11",
+    "stylelint": "^13.12.0",
+    "stylelint-config-twbs-bootstrap": "^2.1.0"
   }
 }
