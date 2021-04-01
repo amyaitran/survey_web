@@ -5,23 +5,24 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="assets/css/starter.css">
-  <title>Bootstrap npm starter</title>
+  <title>Surveyer</title>
 </head>
 
 <body>
   <div class="bg">
-    <h1>Surveyer  </h1>
+    <h1>Surveyer </h1>
     <p>Ask a question.</p>
-    <input type="text" id="helperText" class="form-container" placeholder="Enter your question here">
+    <input type="text" id="question" class="form-container" placeholder="Enter your question here">
     <div class="input_fields">
       <button class="add_field_button btn btn-primary">Add answer</button>
-      <div><input type="text" class="form-container" name="answer" placeholder="Enter your answer here"></div>
-
+      <div><input type="text" class="form-container answer" placeholder="Enter your answer here"></div>
     </div>
-    <hr class="my-5">
-    <script src="node_modules/jquery/dist/jquery.slim.min.js"></script>
-    <script src="app.js"></script>
-    <script type="module" src="assets/js/starter.js"></script>
+    <button type="button" class="submit_btn btn btn-primary">Submit!</button>
+  </div>
+  <hr class="my-5">
+  <script src="node_modules/jquery/dist/jquery.slim.min.js"></script>
+  <script src="app.js"></script>
+  <script type="module" src="assets/js/starter.js"></script>
 </body>
 
 </html>
