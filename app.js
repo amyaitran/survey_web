@@ -31,7 +31,6 @@ $(document).ready(function () {
 				console.log('answer: ' + answer[x].value);
 			}
 		}
-		else { }
 	});
 
 	function validateQuestion() {
