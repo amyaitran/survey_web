@@ -7,7 +7,7 @@ $(document).ready(function () {
 
 
 	var x = 1;
-	console.log('ojjjk');
+	console.log($(wrapper));
 	$(add_button).click(function (e) {
 		console.log(e);
 		if (x < max_fields) {
@@ -23,11 +23,25 @@ $(document).ready(function () {
 
 
 	$(submit_button).click(function (e) {
-		console.log('question: '+question[0].value);
-		var answer = $(".answer");
-		for (x = 0; x < answer.length; x++) {
-			console.log('answer: '+answer[x].value);
-		}});
+		var questionval = validateQuestion();
+		if (questionval == true) {
+			console.log('question: ' + question[0].value);
+			var answer = $(".answer");
+			for (x = 0; x < answer.length; x++) {
+				console.log('answer: ' + answer[x].value);
+			}
+		}
+		else { }
+	});
+
+	function validateQuestion() {
+		var x = question[0].value;
+		if (x == "") {
+			alert("Question must be filled out");
+			return false;
+		}
+		return true;
+	}
 });
 
 
