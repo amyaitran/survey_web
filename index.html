@@ -10,14 +10,20 @@
 
 <body>
   <div class="bg">
-    <h1>Surveyer </h1>
-    <p>Ask a question.</p>
-    <input type="text" id="question" class="form-container" placeholder="Enter your question here">
+    <h1>Surveyer </h1> <br>
+    <h2>Ask anything.</h2>
+    <input type="text" id="question" class="form-container flex-container" placeholder="Enter your question here">
+    <br><br>
+    <h2>Type out answers.</h2>
     <div class="input_fields">
-      <button class="add_field_button btn btn-primary">Add answer</button>
-      <div><input type="text" class="form-container answer" placeholder="Enter your answer here"></div>
+      <div><input type="text" class="form-container flex-left answer" placeholder="Enter your answer here"></div>
     </div>
+    <button class="add_field_button btn btn-primary">Add more <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus-circle" viewBox="0 0 16 16">
+      <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
+      <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
+    </svg></button>
     <button type="button" class="submit_btn btn btn-primary">Submit!</button>
+
   </div>
   <hr class="my-5">
   <script src="node_modules/jquery/dist/jquery.slim.min.js"></script>

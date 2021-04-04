@@ -12,7 +12,7 @@ $(document).ready(function () {
 		console.log(e);
 		if (x < max_fields) {
 			x++;
-			$(wrapper).append('<div><input type="text" class="form-container answer"><a href="#" class="remove_field">Remove</a></div>');
+			$(wrapper).append('<div><input type="text" class="form-container answer" placeholder="Answer"><a href="#" class="remove_field">Remove</a></div>');
 		}
 	});
 
