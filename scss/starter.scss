@@ -102,9 +102,8 @@ h2 {
 
 .bg {
   padding: 3rem 1.5rem;
-  background: #b3ced8 url('../images/cat.jpg');
-  background-image: url("../images/cat.jpg");
-  background-size: cover;
+  background: #b3ced8 url('../../images/airplane.jpg');
+  background-size: 140%;
   color: blue;
 }
 
@@ -113,7 +112,7 @@ h2 {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-image: url("../images/cat.jpg"); min-height: 100%;
+  // background-image: url('../../images/cat.jpg'); min-height: 100%;
   // border: 0.5rem solid navy;
 }
 
