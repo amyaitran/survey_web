@@ -4,7 +4,7 @@ $(document).ready(function () {
 	var add_button = $(".add_field_button");
 	var submit_button = $(".submit_btn");
 	var question = $("#question");
-
+	var answer = $(".answer");
 
 	var x = 1;
 	console.log($(wrapper));
@@ -28,20 +28,33 @@ $(document).ready(function () {
 		if (questionval == true) {
 			console.log('question: ' + question[0].value);
 			var answer = $(".answer");
+			var answerval = validateAnswer();
+			if (answerval == true) {
 			for (x = 0; x < answer.length; x++) {
 				console.log('answer: ' + answer[x].value);
 			}
 		}
+	}
 	});
 
 	function validateQuestion() {
 		var x = question[0].value;
 		if (x == "") {
-			alert("Question must be filled out");
+			alert("Question must be filled out.");
 			return false;
 		}
 		return true;
 	}
+
+	function validateAnswer() {
+		var x = [answer[0].value];
+		if (x == "") {
+			alert("At least 1 answer must be filled out.");
+			return false;
+		}
+		return true;
+	};
+	
 });
 
 
