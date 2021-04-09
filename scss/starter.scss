@@ -84,6 +84,7 @@ h2 {
   height: 100%;
   padding: 3rem 1.5rem;
   color: blue;
+  animation: fadeIn 2s forwards;
 }
 
 .flex {
@@ -119,4 +120,21 @@ h2 {
   border-radius: 16px;
   position: absolute;
   margin-block-start: 20px;
+}
+
+.error {
+  background-color: rgb(247, 215, 215);
+  border-color: red;
+}
+
+
+@keyframes fadeIn {
+  from {
+      opacity: 0;
+      transform: translateY(-2em);
+  }
+  to {
+      opacity: 1;
+      transform: translateY(0);
+  }
 }

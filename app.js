@@ -21,8 +21,6 @@ $(document).ready(function () {
 		$(this).parent('div').remove(); x--;
 	})
 
-
-
 	$(submit_button).click(function (e) {
 		var questionval = validateQuestion();
 		if (questionval == true) {
@@ -30,17 +28,18 @@ $(document).ready(function () {
 			var answer = $(".answer");
 			var answerval = validateAnswer();
 			if (answerval == true) {
-			for (x = 0; x < answer.length; x++) {
-				console.log('answer: ' + answer[x].value);
+				for (x = 0; x < answer.length; x++) {
+					console.log('answer: ' + answer[x].value);
+				}
 			}
 		}
-	}
 	});
 
 	function validateQuestion() {
 		var x = question[0].value;
 		if (x == "") {
 			alert("Question must be filled out.");
+			$('#question').addClass('error');
 			return false;
 		}
 		return true;
@@ -50,11 +49,12 @@ $(document).ready(function () {
 		var x = [answer[0].value];
 		if (x == "") {
 			alert("At least 1 answer must be filled out.");
+			$('.answer').addClass('error');
 			return false;
 		}
 		return true;
 	};
-	
+
 });
 
 
