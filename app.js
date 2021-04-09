@@ -17,7 +17,6 @@ $(document).ready(() => {
         }
     });
 
-
     $(wrapper).on("click", ".remove_field", function(e) {
         $(this).parent("div").remove(); x--;
     });
@@ -39,27 +38,23 @@ $(document).ready(() => {
         }
     });
 
-    /**
-     *
-     */
     function validateQuestion() {
         const x = question[0].value;
 
         if (x == "") {
             alert("Question must be filled out.");
+			$('#question').addClass('error');
             return false;
         }
         return true;
     }
 
-    /**
-     *
-     */
     function validateAnswer() {
         const x = [answer[0].value];
 
         if (x == "") {
             alert("At least 1 answer must be filled out.");
+			$('.answer').addClass('error');
             return false;
         }
         return true;
