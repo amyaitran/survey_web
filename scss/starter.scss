@@ -96,7 +96,6 @@ h2 {
 }
 
 .form-container {
-  // padding: 10px 30px 10px 100px;
   padding: .8rem 1.4rem;
   margin: 1px 2px;
   font-size: 1.05rem;
@@ -118,4 +117,6 @@ h2 {
   background: blue;
   border: none;
   border-radius: 16px;
+  position: absolute;
+  margin-block-start: 20px;
 }
