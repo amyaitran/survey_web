@@ -60,4 +60,7 @@ $(document).ready(() => {
         return true;
     }
 
+	$(".answer").click(function() {
+		$('.answer').removeClass('error');
+	});
 });
