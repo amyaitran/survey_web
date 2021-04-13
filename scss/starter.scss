@@ -114,12 +114,12 @@ h2 {
 }
 
 .remove-btn {
+  position: absolute;
   color: white;
   background: blue;
   border: none;
-  border-radius: 16px;
-  position: absolute;
   margin-block-start: 20px;
+  border-radius: 16px;
 }
 
 .error {
@@ -127,14 +127,14 @@ h2 {
   border-color: red;
 }
 
-
 @keyframes fadeIn {
   from {
-      opacity: 0;
-      transform: translateY(-2em);
+    opacity: 0;
+    transform: translateY(-2em);
   }
+
   to {
-      opacity: 1;
-      transform: translateY(0);
+    opacity: 1;
+    transform: translateY(0);
   }
 }
