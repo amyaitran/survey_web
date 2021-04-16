@@ -36,12 +36,13 @@
   "dependencies": {
     "bootstrap": "^4.6.0",
     "bootstrap-icons": "^1.4.0",
+    "chart.js": "^3.1.0",
     "jquery": "^3.6.0",
     "popper.js": "^1.16.1"
   },
   "devDependencies": {
     "autoprefixer": "^10.2.5",
-    "eslint": "^7.23.0",
+    "eslint": "^7.24.0",
     "eslint-config-eslint": "^7.0.0",
     "eslint-plugin-jsdoc": "^32.3.0",
     "eslint-plugin-node": "^11.1.0",
