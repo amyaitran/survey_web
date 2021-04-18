@@ -17,7 +17,7 @@ $(document).ready(() => {
         }
     });
 
-    $(wrapper).on("click", ".remove_field", function(e) {
+    $(wrapper).on("click", ".remove_field", function (e) {
         $(this).parent("div").remove(); x--;
     });
 
@@ -43,7 +43,7 @@ $(document).ready(() => {
 
         if (x == "") {
             alert("Question must be filled out.");
-			$('#question').addClass('error');
+            $('#question').addClass('error');
             return false;
         }
         return true;
@@ -54,13 +54,18 @@ $(document).ready(() => {
 
         if (x == "") {
             alert("At least 1 answer must be filled out.");
-			$('.answer').addClass('error');
+            $('.answer').addClass('error');
             return false;
         }
         return true;
     }
 
-	$(".answer").click(function() {
-		$('.answer').removeClass('error');
-	});
+    $('#question, .answer').blur(function () {
+        if (!$(this).val()) {
+            $(this).addClass("error");
+        }
+        else {
+            $(this).removeClass("error");
+        }
+    });
 });
