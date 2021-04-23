@@ -60,12 +60,12 @@ html {
 
 body {
   height: 100%;
-  overflow: hidden;
+  // overflow: hidden;
   // padding: 3rem 1.5rem;
   font-family: Montserrat, sans-serif;
   font-size: 10pt;
   background: #b3ced8 url("../../images/airplane.jpg") no-repeat center fixed;
-  transform: scale(1.4);
+  // transform: scale(1.4);
 }
 
 h1 {
@@ -125,6 +125,10 @@ h2 {
 .error {
   background-color: rgb(247, 215, 215);
   border-color: red;
+}
+
+#chart {
+  background-color: rgba(255, 255, 255, 0.767);
 }
 
 @keyframes fadeIn {
