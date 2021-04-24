@@ -1,16 +1,13 @@
 $.getJSON("http://localhost:3002/survey", function (data) {
     $('.text').text(JSON.stringify(data));
     console.log('json:' + JSON.stringify(data.survey));
-    //    console.log('json:' + JSON.stringify(data.survey.graphs.keys))
     var ctx = document.getElementById('chart').getContext('2d');
     var myChart = new Chart(ctx, {
         type: 'bar',
         data: {
-            // labels: ['Red', 'Blue', 'Yellow', 'Green'],
             labels: data.survey.graphs[0].keys,
             datasets: [{
                 label: '# of Votes',
-                // data: [12, 19, 3, 5],
                 data: data.survey.graphs[0].values,
                 backgroundColor: [
                     'rgba(255, 99, 132, 0.2)',
@@ -39,6 +36,15 @@ $.getJSON("http://localhost:3002/survey", function (data) {
             }
         }
     });
-});
-
+    // function displayAnswers(answers) {
+    //     var answersInfo = document.getElementById("myData");
+    // for (var i = 0; i< answers.length; i++) {
+    //     var div = document.createElement("div");
+    //     div. innerHTML = 'Answer: '+answers[0];
+    //     mainContainer.displayAnswers(div);
+    }
+})
+.fail(function() {
+    console.log('failed')
+})
 
