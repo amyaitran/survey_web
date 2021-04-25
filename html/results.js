@@ -1,14 +1,22 @@
 $.getJSON("http://localhost:3002/survey", function (data) {
     $('.text').text(JSON.stringify(data));
     console.log('json:' + JSON.stringify(data.survey));
+    var answers = data.survey.graphs[0].keys;
+    var votes = data.survey.graphs[0].values;
+    var question = data.survey.graphs[0].title;
     var ctx = document.getElementById('chart').getContext('2d');
+    console.log(answers)
+    console.log(question)
+    console.log(answers.length);
+    console.log(typeof answers);
+    console.log(typeof answers.length);
     var myChart = new Chart(ctx, {
         type: 'bar',
         data: {
-            labels: data.survey.graphs[0].keys,
+            labels: answers,
             datasets: [{
                 label: '# of Votes',
-                data: data.survey.graphs[0].values,
+                data: votes,
                 backgroundColor: [
                     'rgba(255, 99, 132, 0.2)',
                     'rgba(54, 162, 235, 0.2)',
@@ -35,16 +43,27 @@ $.getJSON("http://localhost:3002/survey", function (data) {
                 }
             }
         }
-    });
-    // function displayAnswers(answers) {
-    //     var answersInfo = document.getElementById("myData");
-    // for (var i = 0; i< answers.length; i++) {
-    //     var div = document.createElement("div");
-    //     div. innerHTML = 'Answer: '+answers[0];
-    //     mainContainer.displayAnswers(div);
+    })
+    function typeError(answers) {
+        if (undefined == 0) {
+            return 0
+        }
     }
+
+    document.getElementById("answersData").innerHTML = answers;
+    // function displayAnswers(answers) {
+    //     var mainContainer = document.getElementById("answersData")
+    //     for (var i = 0; i < answers.length; i++) {
+    //         var div = document.createElement("div");
+    //         div.innerHTML = 'Answer: ' + answers[i];
+    //         mainContainer.appendChild(div)
+    //     }
+    // };
+
+    document.getElementById("questionData").innerHTML = question;
 })
-.fail(function() {
-    console.log('failed')
-})
+
+    .fail(function () {
+        console.log('failed')
+    })
 
