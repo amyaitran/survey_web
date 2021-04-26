@@ -5,11 +5,17 @@ $.getJSON("http://localhost:3002/survey", function (data) {
     var votes = data.survey.graphs[0].values;
     var question = data.survey.graphs[0].title;
     var ctx = document.getElementById('chart').getContext('2d');
-    console.log(answers)
-    console.log(question)
-    console.log(answers.length);
-    console.log(typeof answers);
-    console.log(typeof answers.length);
+
+    var mainContainer = document.getElementById("answersData")
+    for (var i = 0; i < answers.length; i++) {
+        var div = document.createElement("div");
+        div.innerHTML = answers[i];
+        mainContainer.appendChild(div)
+    }
+
+
+    Chart.defaults.font.size = 30;
+    Chart.defaults.layout.padding = 20;
     var myChart = new Chart(ctx, {
         type: 'bar',
         data: {
@@ -40,6 +46,15 @@ $.getJSON("http://localhost:3002/survey", function (data) {
             scales: {
                 y: {
                     beginAtZero: true
+                },
+            },
+            plugins: {
+                legend: {
+                    labels: {
+                        font: {
+                            size: 20
+                        }
+                    }
                 }
             }
         }
@@ -50,7 +65,7 @@ $.getJSON("http://localhost:3002/survey", function (data) {
         }
     }
 
-    document.getElementById("answersData").innerHTML = answers;
+    // document.getElementById("answersData").innerHTML = answers;
     // function displayAnswers(answers) {
     //     var mainContainer = document.getElementById("answersData")
     //     for (var i = 0; i < answers.length; i++) {
